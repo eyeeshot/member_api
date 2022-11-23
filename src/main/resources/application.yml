@@ -1,0 +1,36 @@
+spring:
+  main:
+    allow-circular-references: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+#  datasource:
+#    url: jdbc:mysql://database:3306/userdb
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: sa
+#    password:
+  redis:
+    host: localhost
+    port: 6379
+  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: none
+jwt:
+  secret: sdflksdlkfjlkwjerlwj1slkdjflj342l3k4lkssdfnsldkfjlsfdslkflksdsmfsm212ssdfs2
+  expiretime : 864000000
+  header: Authorization
+  prefix: Bearer
